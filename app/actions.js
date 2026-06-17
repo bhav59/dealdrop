@@ -120,7 +120,9 @@ export async function getProducts() {
     if (error) throw error;
     return data || [];
   } catch (error) {
-    console.error("Get products error:", error);
+    console.error("Get products error:", JSON.stringify(error, null, 2));
+    console.error("Error message:", error?.message);
+    console.error("Error code:", error?.code);
     return [];
   }
 }
